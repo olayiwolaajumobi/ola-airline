@@ -1,0 +1,33 @@
+{% extends "./base.html"%}
+{% block title%} Create Account {% endblock%}
+
+
+
+{% block content %} 
+<div class="auth">
+
+    <form method="post" >
+
+    {% csrf_token %}
+
+    <h2> Create Account </h2>
+        <input name="first_name" type="text" placeholder="Enter first name" required/>
+
+        <input name="last_name" type="text" placeholder="Enter last name" required/>
+
+        <input name="username" type="text" placeholder="Enter Username" required/>
+
+        <input name="email" type="text" placeholder="Enter Email address" required/>
+
+        <input name="password" type="password" placeholder="Enter password" required/>
+
+        <button> Create Account </button>
+    </form>
+
+
+    </div>
+
+
+
+
+{% endblock %}

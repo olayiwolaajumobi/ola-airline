@@ -1,0 +1,98 @@
+{% extends './base.html' %}
+
+
+{% block title %} OLAYIWOLA's AIRLINE {% endblock %}
+
+
+{% block content %} 
+
+    <form class="flight-container">
+
+
+        <div>
+
+            <h4> Select your flight </h4>
+
+            <select name="from"> 
+
+                {% for x in location %}
+                    <option value="{{x.id}}"> {{x.location}} ({{x.code}}) </option>
+                {%endfor %}
+
+
+            </select>
+
+        </div>
+
+
+
+
+        <div>
+
+            <h4> Select your Date </h4>
+
+            <input name="date" type="date" />
+
+        </div>
+
+
+
+
+        <div>
+
+            <h4> Select your Passenger </h4>
+
+            <select name="from"> 
+
+                {% for x in location %}
+                    <option value="{{x.id}}"> {{x.location}} ({{x.code}}) </option>
+                {%endfor %}
+
+
+            </select>
+
+        </div>
+
+
+
+        
+
+
+    </form>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
