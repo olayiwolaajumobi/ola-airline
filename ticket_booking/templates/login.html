@@ -1,5 +1,5 @@
 {% extends "./base.html" %}
-
+{% load static %}
 {% block title %} Create Account {% endblock %}
 
 
@@ -11,13 +11,24 @@
 
     {% csrf_token %}
 
-    <h2> Create Account </h2>
+    <h2> Login </h2>
         
         <input name="username" type="text" placeholder="Enter Username" required/>
 
         <input name="password" type="password" placeholder="Enter password" required/>
 
         <button> Login </button>
+        
+        <h2 class="p2">Don't have an Account?</h2>
+
+
+           </form>
+            
+           <div class="Account">
+
+            <a href="/create">
+                <button class="login">Create An Account</button>
+            </a>
     </form>
 
 
