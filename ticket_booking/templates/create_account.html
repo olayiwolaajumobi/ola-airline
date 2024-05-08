@@ -7,37 +7,42 @@
 {% block content %} 
 <div class="auth">
 
-    <form method="post" >
+    <div>
 
-    {% csrf_token %}
+        <form method="post" >
 
-    <h2> Create Account </h2>
-        <input name="first_name" type="text" placeholder="Enter first name" required/>
+        {% csrf_token %}
 
-        <input name="last_name" type="text" placeholder="Enter last name" required/>
+        <h2> Create Account </h2>
+            <input name="first_name" type="text" placeholder="Enter first name" required/>
 
-        <input name="username" type="text" placeholder="Enter Username" required/>
+            <input name="last_name" type="text" placeholder="Enter last name" required/>
 
-        <input name="email" type="text" placeholder="Enter Email address" required/>
+            <input name="username" type="text" placeholder="Enter Username" required/>
 
-        <input name="password" type="password" placeholder="Enter password" required/>
+            <input name="email" type="text" placeholder="Enter Email address" required/>
 
-        <button> Create Account </button>
+            <input name="password" type="password" placeholder="Enter password" required/>
 
-        <h2 class="p1">
+            <button> Create Account </button>
+
+            <h2 class="p1">
                 By signing up you accept our terms and conditions <br> & privacy policy 
             </h2>
 
             <p class="p2">Already have an Account? <a href="#"> Login here</a></p>
-           
-            </form>
+            
+        </form>
 
-            <div  class="Account">
+        <div  class="Account">
+            <a href="/login">
+                <button class="login">login</button>
+            </a>
+        </div>
 
-                <a href="/login">
-                     <button class="login">login</button>
-                </a>
     </div>
+    
+</div>
 
 
 

@@ -15,6 +15,8 @@
 
             <select name="from"> 
 
+                <option value="0"> Select Departure Flight </option>
+
                 {% for x in location %}
                     <option value="{{x.id}}"> {{x.location}} ({{x.code}}) </option>
                 {%endfor %}

@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-5+9_)5hn(o9d*4k2(%#wq!hukwr$#t)3rkwm9bd&g8__a2fbk*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG")
+DEBUG = bool(os.getenv("DEBUG"))
 
 ALLOWED_HOSTS = [os.getenv("ALLOWED_HOST")]
 # "ola-airline.onrender.com"
@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'airline.wsgi.application'
 
 
 
-if os.getenv("DEBUG") == True:
+if DEBUG:
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

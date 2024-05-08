@@ -11,7 +11,3 @@ class User(AbstractUser):
 class FlightLocation(models.Model):
     code= models.CharField(max_length=3)
     location= models.CharField(max_length=250)
-
-    def save(self, *args, **kwargs) :
-        self.slug  = slugify(self.title)
-        return super().save(*args, **kwargs)

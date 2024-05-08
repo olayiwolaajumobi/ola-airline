@@ -10,6 +10,7 @@ body {
 main {
     padding-left: 80px;
     padding-right: 80px;
+    width: 100%;
 }
 
 
@@ -32,9 +33,7 @@ main {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-nav {
-    color: blue;
-}
+
 
 nav {
     background-color: #171717;
@@ -64,9 +63,6 @@ nav a {
     color: white;
 }
 
-.main {
-    padding: 24px;
-}
 
 a {
     text-decoration: none;
@@ -75,3 +71,14 @@ a {
     font-size: 18px;
 }
 
+.auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.auth > div {
+    border: 1px solid gray;
+    background-color: whitesmoke;
+}
