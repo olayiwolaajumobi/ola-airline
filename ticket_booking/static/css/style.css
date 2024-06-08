@@ -4,6 +4,7 @@
 }
 
 body {
+    font-family: Arial, sans-serif;
     background-color: whitesmoke;
 }
 
@@ -21,6 +22,7 @@ main {
     border: 1px solid gray;
     margin-top: 40px;
     padding: 40px;
+    color: blue;
 }
 
 .flight-container > div {
@@ -82,3 +84,45 @@ a {
     border: 1px solid gray;
     background-color: whitesmoke;
 }
+
+.flight-search{
+    display: flex;
+    color: blue;
+    justify-content: center;
+    align-items: center;
+}
+.flight-container button{
+    border: 2px solid white;
+    padding: 10px;
+    color: blue;
+    height: 48px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #0050A0;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+
+  .p4 {
+    justify-content: center;
+    text-align: center;
+    background-color: white(0, 0, 0, 0.2);
+    margin-top: 30px;
+    font-size: smaller;
+    display: block;
+    }
+
+
+
+
+
+
+
+
+
+

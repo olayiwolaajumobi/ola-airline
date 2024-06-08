@@ -131,3 +131,26 @@ h1 {
     padding: 28px;
     width: 100%;
 }
+.auth1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.auth1 > div {
+    border: 1px solid gray;
+    background-color: whitesmoke
+}
+
+
+
+
+
+
+
+
+
+
+
+

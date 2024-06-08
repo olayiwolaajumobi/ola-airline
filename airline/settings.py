@@ -153,3 +153,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 AUTH_USER_MODEL = "ticket_booking.User"
+
+# paypal_configuration = [
+#     PAYPAL_CLIENT_ID = "client-id"
+#     PAYPAL_CLIENT_SECRET = "CLIENT-secret"
+#     PAYPAL_MODE = "sandbox"
+#     ]

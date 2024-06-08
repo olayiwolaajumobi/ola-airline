@@ -1,7 +1,15 @@
 from django.shortcuts import render, HttpResponseRedirect
-from .models import FlightLocation
+from .models import FlightLocation, User, Booking
 from django.contrib.auth import authenticate, login, logout
 
+
+
+# paypalrestsdk.configure({
+#     "mode": settings.PAYPAL_MODE,
+#     "client_id": settings.PAYPAL_CLIENT_ID,
+#     "client_secret": settings.PAYPAL_CLIENT_SECRET
+    
+#     })
 
 # Create your views here.
 
@@ -21,8 +29,7 @@ def create_account(req):
         password = req.POST['password']
         
 
-        try:
-            User.objects.create_user(
+        User.objects.create_user(
                 first_name=first_name,
                 last_name=last_name,
                 username=username,
@@ -30,10 +37,9 @@ def create_account(req):
                 password=password
                 
                 )
-            return HttpResponseRedirect("/")
-        except:
-            print("error")
-            pass
+    return HttpResponseRedirect("/")
+        
+        
 
     return render(req, "create_account.html")
 
@@ -53,19 +59,48 @@ def login_view(req):
                 }
             else:
                 
-                login(req, user)
-                try:
-                    return HttpResponseRedirect(req.GET["next"])
-                except:
-                    return HttpResponseRedirect("/")
+                login(req, user=user)
+            return HttpResponseRedirect("/")
         except:
             pass
 
+            return render("login.html")
+       
     return render(req, "login.html")
 
 def logout_view(req):
     logout(req)
     return HttpResponseRedirect("/")
+
+
+def search_flight(req):
+    if req.method == 'POST':
+            
+            return render(req, 'search_flight.html')
+    else:
+            form = FlightLocation()
+            return render(req, "/")
+def payment_page(req):
+     return render(req, "payment.html")
+
+# def create_payment(req):
+#      if request.method == "POST":
+#           payment = paypalrestsdk.Payment({
+#                "intent": "sale",
+#                "payer":{
+#                     "payment_method":"paypal"
+#                },
+#                "redirect_urls":[
+#                     "return_url":"http://localhost:8000/execute/",
+#                     "cancle_urls": "http://localhost:8000/cancle/"
+#                ],
+#                "transactions":[{
+#                     "item_list":{
+#                          "items"
+#                     }
+#                }]
+#           })
+
 
 
 

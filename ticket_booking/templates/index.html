@@ -5,10 +5,14 @@
 
 
 {% block content %} 
-
-    <form class="flight-container">
-
-
+    
+        <h2>Book a Flight</h2>
+    
+        <div>
+        <input type="checkbox" id="One-way">
+        </div>
+    <form class="flight-container" method="post" action="search">
+    {% csrf_token %}
         <div>
 
             <h4> Select your flight </h4>
@@ -24,27 +28,9 @@
 
             </select>
 
-        </div>
-
-
-
-
-        <div>
-
-            <h4> Select your Date </h4>
-
-            <input name="date" type="date" />
-
-        </div>
-
-
-
-
-        <div>
-
-            <h4> Select your Passenger </h4>
-
             <select name="from"> 
+
+                <option value="0"> Select Arrival Flight </option>
 
                 {% for x in location %}
                     <option value="{{x.id}}"> {{x.location}} ({{x.code}}) </option>
@@ -57,13 +43,93 @@
 
 
 
-        
 
+        <div>
+                
+            <h4> Select your Date </h4>
+            
+            <input name="date" type="date"/>
+
+            <input name="date" type="date"/>
+
+
+        </div>
+
+                <div class="row">
+
+                    <h4> Select your Passenger </h4>
+                    
+                    <div>
+                        <label for="adults" class="d-inline-flex col-auto">Adults <span class="sublabel"> 12+
+                            </span></label>
+                        <select class="form-select" id="adults"
+                            onchange="javascript: dynamicDropDown(this.options[this.selectedIndex].value);">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+
+                    </div>
+
+
+                    <div>
+                        <label for="children" class="d-inline-flex col-auto">Children <span class="sublabel"> 2-11
+                            </span></label>
+                        <select class="form-select" id="children">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="infants" class="d-inline-flex col-auto">Infants <span class="sublabel"> less than
+                                2</span></label>
+                        <select class="form-select" id="infants">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+                </div>
+                       
+                       <div>
+                        <div class=direct-flight>
+                            <input type="checkbox" id="directFlights">
+                            <label for="directFlights">Direct flights</label>
+                        </div>
+                    </div>
+                
+
+
+                
+                     <div class=p4>
+                        <button type="submit" class="btn btn-primary">Search flights</button>
+                    </div> 
+
+
+        </div>
 
     </form>
 
 
 {% endblock %}
+
+
+
+
+
 
 
 

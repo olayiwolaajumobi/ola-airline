@@ -1,0 +1,19 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block content %}
+{% block head %}
+
+        <link rel="stylesheet" href="{% static '/css/style.css' %}">
+{% endblock %}
+
+    <form class=p4 method='post'>
+        {% csrf_token %}
+
+        
+        <button type="submit" class="btn btn-primary">Search flights</button>
+
+    </form> 
+
+{% endblock %}
+
+
